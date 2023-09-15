@@ -28,3 +28,38 @@ header{
     color: black;
 }
 
+h1{
+    display: flex;
+    justify-content: center;
+    padding-top: 10%
+}
+
+p{
+    display: flex;
+    flex: flex-wrap;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+.startBtn{
+    background-color: rgb(158, 32, 116);
+    border: none;
+    border-radius:10px;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .startBtn:hover {opacity: 1}
