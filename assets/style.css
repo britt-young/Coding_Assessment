@@ -1,0 +1,11 @@
+header{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: white;
+    color:blue;
+}
+
+.nav{
+    display: flex;
+    flex: flex-wrap;
+    
+}
