@@ -6,7 +6,7 @@
 header{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: white;
-    color:blue;
+    color:black;
 }
 
 .navList{
@@ -18,11 +18,13 @@ header{
     display:flex;
     justify-content: flex-start;
     flex-direction: row;
+    color: rgb(158, 32, 116);
 }
 
 .timer{
     display:flex;
     justify-content: flex-end;
     flex-direction: row;
+    color: black;
 }
 
