@@ -104,3 +104,11 @@ ul {
     margin: 20px auto 0;
     display: none;
 }
+
+.correct{
+    background: rgb(127, 192, 127)
+}
+
+.incorrect{
+    background: rgb(241, 109, 109)
+}
