@@ -77,6 +77,10 @@ ul {
   font-size: 15px;
 }
 
+.hide {
+    display: none;
+}
+
 .btn{
     background: rgb(158, 32, 116);
     color: white;
@@ -91,7 +95,7 @@ ul {
     transition: 0.3s;
 }
 
-.btn:hover //*:not([diabled])*//{
+.btn:hover /*:not([diabled])*/{
     opacity: 1;
 }
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,26 @@
 </head>
 
 <body>
-    <header> 
+    <header>
         <nav class="nav">
             <ul class=" navList">
-                <li class= "toScores"> View High Scores LINK </li>
-                <li id="time"> Time Left:  </li>
+                <li class="toScores"> View High Scores LINK </li>
+                <li id="time"> Time Left: </li>
             </ul>
         </nav>
-        <h1>Entry Level Coding Assessment</h1>
     </header>
 
-    <main>
-        <p> To answer the following code-related queswtions within the time-limit. Keep in mind that incorret answers will penalize your score/time by 10 seconds!</p>
+    <main class="intro">
+        <h1>Entry Level Coding Assessment</h1>
+        <p> To answer the following code-related queswtions within the time-limit. Keep in mind that incorret answers
+            will penalize your score/time by 10 seconds!</p>
+
+        <section>
+            <button class="startBtn" onclick="startQuiz()">Start Quiz</button>
+        </section>
     </main>
 
-    <section>
-        <button class="startBtn" onclick= "timer()" >Start Quiz</button>
-    </section>
-
-    <div class="quiz">
+    <div class="quiz hide">
         <h2 id="questions">Add question here</h2>
         <div id="answer-buttons">
             <button class="btn"> Answer 1</button>
@@ -34,7 +36,7 @@
             <button class="btn"> Answer 3</button>
             <button class="btn"> Answer 4</button>
         </div>
-        <h3 id= "feedbackTxt">variable assigned to feedback?</h3>
+        <h3 id="feedbackTxt">variable assigned to feedback?</h3>
     </div>
 
 
@@ -44,4 +46,5 @@
 
     <script src="./assets/script.js"></script>
 </body>
+
 </html>

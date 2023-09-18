@@ -96,10 +96,25 @@ const feedbackElement = document.getElementById("feedbackTxt");
 
 let currentQuestionIndex = 0;
 let score = 0;
+var sec = 75;
+
+function timer(){
+    var sec = 75;
+    var time = setInterval(function(){
+        document.getElementById("time").innerHTML='00:'+ sec;
+        sec--;
+        if (sec < 0) {
+            clearInterval(time);
+        }
+    }, 1000);
+}
 
 function startQuiz(){
+    document.querySelector(".intro").classList.add("hide");
     currentQuestionIndex = 0;
     score = 0;
+    timer();
+    document.querySelector(".quiz").classList.remove("hide");
     showQuestion();
 }
 
@@ -113,6 +128,7 @@ function showQuestion(){
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
+        button.disabled = false;
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerButtons.appendChild(button);
@@ -123,23 +139,48 @@ function showQuestion(){
     })
 }
 
+
+function displayFeedback(isCorrect){
+    var feedback = "";
+    if(isCorrect){
+        feedback ="Nice job";
+    } else{
+        feedback = "Not quite";
+    }
+    feedbackTxt.style.display = "block";
+    feedbackTxt.textContent = feedback;
+}
+
+
 function selectAnswer(e){
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
         selectedBtn.classList.add("correct");
         score++;
+
+        setTimeout(() => {
+            currentQuestionIndex++;
+            showQuestion();
+        }, 2000);
+
     } else {
         selectedBtn.classList.add("incorrect");
-        //*DEDUCT TIME HERE*?//
+        sec-= 10;
+
+        setTimeout(() => {
+            currentQuestionIndex++;
+            showQuestion();
+        }, 2000);
     }
+
     Array.from(answerButtons.children).forEach(button => {
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
         }
         button.disabled = true;
     })
-    feedbackTxt.style.display = "block";
+    displayFeedback(isCorrect);
 }
 
 
@@ -152,19 +193,20 @@ function resetState(){
 
 function showHighScores(){
     resetState();
-    
+
 }
 
 function showScore(){
     resetState();
-    questionsElement.innerHTML = "Your final score is ${score}!"
+    questionsElement.innerHTML = "Your final score is ${score}!";
+
     //* input initials *//
     //* SHOW HIGH SCORES*//
 }
 
-function nextQuestion{
+function nextQuestion(){
     currentQuestionIndex++;
-    if(currentQuestionIndex < question.length){
+    if(currentQuestionIndex < questions.length){
         showQuestion();
     } else {
         showScore();
@@ -175,18 +217,4 @@ function nextQuestion{
 
 if(currentQuestionIndex < questions.length){
     nextQuestion();
-}
-
-startQuiz();
-
-
-function timer(){
-    var sec = 75;
-    var timer = setInterval(function(){
-        document.getElementById("time").innerHTML='00:'+ sec;
-        sec--;
-        if (sec < 0) {
-            clearInterval(time);
-        }
-    }, 1000);
 }
