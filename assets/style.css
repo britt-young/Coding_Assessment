@@ -25,7 +25,7 @@ header {
   color: rgb(158, 32, 116);
 }
 
-.time {
+#time {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
@@ -93,4 +93,14 @@ ul {
 
 .btn:hover{
     opacity: 1;
+}
+
+#feedback-txt{
+    background: white;
+    color: black;
+    font-weight: 30;
+    border: 0;
+    padding: 10px 0 10px 30px;
+    margin: 20px auto 0;
+    display: none;
 }
