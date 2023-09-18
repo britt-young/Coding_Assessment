@@ -1,67 +1,96 @@
-:root{
-    --dark: black;
-    --light: white;
+:root {
+  --dark: black;
+  --light: white;
 }
 
-header{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: white;
-    color:black;
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.navList{
-    display:flex;
-    justify-content: space-between;
+header {
+  background-color: white;
+  color: black;
 }
 
-.toScores{
-    display:flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    color: rgb(158, 32, 116);
+.navList {
+  display: flex;
+  justify-content: space-between;
 }
 
-.time{
-    display:flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    color: black;
+.toScores {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  color: rgb(158, 32, 116);
 }
 
-h1{
-    display: flex;
-    justify-content: center;
-    padding-top: 10%
+.time {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  color: black;
 }
 
-p{
-    display: flex;
-    flex: flex-wrap;
-    justify-content: center;
+h1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+p {
+  display: flex;
+  flex: flex-wrap;
+  justify-content: center;
 }
 
 section {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
 
-.startBtn{
-    background-color: rgb(158, 32, 116);
-    border: none;
-    border-radius:10px;
+.startBtn {
+  background-color: rgb(158, 32, 116);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.startBtn:hover {
+  opacity: 1;
+}
+
+.quiz {
+  padding: 20px 350px;
+  font-size: 15px;
+}
+
+.btn{
+    background: rgb(158, 32, 116);
     color: white;
-    padding: 8px 16px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-weight: 200;
+    width: 100%;
+    border: none;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
     opacity: 0.6;
     transition: 0.3s;
-    cursor: pointer;
-  }
-  
-  .startBtn:hover {opacity: 1}
+}
+
+.btn:hover{
+    opacity: 1;
+}
