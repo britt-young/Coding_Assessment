@@ -1,6 +1,6 @@
 # Coding_Assessment
 
-## Mini, self-study tool when learning web development
+## Mini, self-study tool for learning JavaScript
 
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
