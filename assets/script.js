@@ -199,17 +199,17 @@ function resetState(){
 }
 }
 
-
-
 function showHighScores(){
     resetState();
 
 }
 
 function showScore(){
+    const submit = document.createElement("submit-button");
     resetState();
     questionsElement.innerHTML = "Your final score is ${score}!";
-
+    document.querySelector(".highscore").classList.remove("hide");
+    submit-button.addEventListener("click", showHighScores());
     //* input initials *//
     //* SHOW HIGH SCORES*//
 }
@@ -222,3 +222,10 @@ function nextQuestions(){
         showScore();
     }
 }
+button.addEventListener("click", () =>{
+    if(currentQuestionIndex < questions.length){
+        nextQuestions();
+} else {
+    startQuiz();
+}
+});
