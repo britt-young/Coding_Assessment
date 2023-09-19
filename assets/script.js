@@ -186,7 +186,7 @@ function selectAnswer(e) {
     //deduct time if question answered is incorrect
   } else {
     selectedBtn.classList.add("incorrect");
-    sec -= 10;
+    sec-=10;
     setTimeout(() => {
       currentQuestionIndex++;
       if (currentQuestionIndex < questions.length) {
@@ -222,7 +222,7 @@ function showHighScores() {
 function showScore() {
   const submit = document.createElement("submit-button");
   resetState();
-  questionsElement.innerHTML = "Your final score is ${score}!";
+  questionsElement.innerHTML = "Your final score is " + score + " out of 10!";
   document.querySelector(".highscore").classList.remove("hide");
   submit - button.addEventListener("click", showHighScores());
 }

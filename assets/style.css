@@ -116,3 +116,22 @@ ul {
 .incorrect{
     background: rgb(241, 109, 109)
 }
+
+.highscore{
+  color: black;
+  border: 0;
+  padding: 10px 0 10px 50px;
+  margin: 20px auto 0;
+}
+
+.submit{
+  background: rgb(158, 32, 116);
+  color: white;
+  font-weight: 200;
+  width: 5%;
+  border: none;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
