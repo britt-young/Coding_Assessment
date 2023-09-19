@@ -118,9 +118,8 @@ function timer() {
   var time = setInterval(function () {
     document.getElementById("time").innerHTML = "00:" + sec;
     sec--;
-    if (sec < 0) {
-      clearInterval(time);
-    }
+    if (sec < 0 || currentQuestionIndex === questions.length) {
+      clearInterval(time);}
   }, 1000);
 }
 
@@ -186,7 +185,7 @@ function selectAnswer(e) {
     //deduct time if question answered is incorrect
   } else {
     selectedBtn.classList.add("incorrect");
-    sec-=10;
+    sec -= 10;
     setTimeout(() => {
       currentQuestionIndex++;
       if (currentQuestionIndex < questions.length) {
@@ -216,15 +215,17 @@ function resetState() {
 //////
 function showHighScores() {
   resetState();
-  console.log(score);
+  var userInit = document.getElementById("initials").value;
+  questionsElement.innerHTML = userInit + ": " + score;
 }
 
 function showScore() {
-  const submit = document.createElement("submit-button");
   resetState();
+  const submit = document.createElement("button");
+  submit.classList.add("submit");
   questionsElement.innerHTML = "Your final score is " + score + " out of 10!";
   document.querySelector(".highscore").classList.remove("hide");
-  submit - button.addEventListener("click", showHighScores());
+  submit.addEventListener("click", showHighScores);
 }
 
 //if the current question is less than the question array length, then it will show another question
