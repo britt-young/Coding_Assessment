@@ -19,8 +19,7 @@ User will have the option to retake the quiz.
     ![deployed_page](assets/mock-up.png)
 
 ## Credits
-University Tutors: Alistar Rowden
-Bootcamp Services: XpertLearningAI
+University Tutors: Alistar Rowden & Bootcamp Services: XpertLearningAI
 
 ## License
 n/a
