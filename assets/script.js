@@ -88,6 +88,16 @@ const questions = [
             {text: "wrong answer", correct: false},
         ]
     },
+
+    {
+        question: "add text",
+        answers: [
+            {text: "correct answer", correct: true},
+            {text: "wrong answer", correct: false},
+            {text: "wrong answer", correct: false},
+            {text: "wrong answer", correct: false},
+        ]
+    },
 ]
 
 const questionsElement = document.getElementById("questions");
@@ -117,8 +127,6 @@ function startQuiz(){
     document.querySelector(".quiz").classList.remove("hide");
     showQuestion();
 }
-
-//*NEED EVENTLISTENER TO HIDE INSTRUCTIONS*//
 
 function showQuestion(){
     resetState();
@@ -166,12 +174,12 @@ function selectAnswer(e){
 
     } else {
         selectedBtn.classList.add("incorrect");
-        sec-= 10;
+        sec -= 10;
 
         setTimeout(() => {
             currentQuestionIndex++;
             showQuestion();
-        }, 2000);
+        }, 1000);
     }
 
     Array.from(answerButtons.children).forEach(button => {
@@ -191,6 +199,8 @@ function resetState(){
 }
 }
 
+
+
 function showHighScores(){
     resetState();
 
@@ -204,17 +214,11 @@ function showScore(){
     //* SHOW HIGH SCORES*//
 }
 
-function nextQuestion(){
+function nextQuestions(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
         showQuestion();
     } else {
         showScore();
     }
-}
-
-//* add event listener on feedbackTxt to progress quiz*//
-
-if(currentQuestionIndex < questions.length){
-    nextQuestion();
 }
