@@ -16,7 +16,7 @@ When start button is clicked, user has 75 seconds to complete the 5 question qui
 Each wrong answer will deduct 10 seconds from time as a penalty.
 When the time runs out or all 5 questions have been answered, the page will display your final score and ask for user input of initials.
 User will have the option to retake the quiz.
-    ![deployed_page](Cassets\Mock_up_snippet.png)
+    ![deployed_page](assets/Mock_up_snippet.png)
 
 ## Credits
 University Tutors: Alistar Rowden & Bootcamp Services: XpertLearningAI
