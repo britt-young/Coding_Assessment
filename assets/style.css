@@ -95,7 +95,7 @@ ul {
     transition: 0.3s;
 }
 
-.btn:hover /{
+.btn:hover:not([disabled]){
     opacity: 1;
 }
 
