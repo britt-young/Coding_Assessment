@@ -1,102 +1,52 @@
 //array of questions to ask
 const questions = [
   {
-    question: "add text",
+    question: "Commonly used data types do NOT include:",
     answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
+      { text: "alerts", correct: true },
+      { text: "booleans", correct: false },
+      { text: "strings", correct: false },
+      { text: "numbers", correct: false },
     ],
   },
 
   {
-    question: "add text",
+    question: "The condition in an if/ else statement is enclosed with _______?",
     answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
+      { text: "quotations", correct: false },
+      { text: "curly brackets", correct: false },
+      { text: "parenthesis", correct: true },
+      { text: "square brackets", correct: false },
     ],
   },
 
   {
-    question: "add text",
+    question: "Arrays in JavaScript can be used to store _________.",
     answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
+      { text: "booleans", correct: false },
+      { text: "other arrays", correct: false },
+      { text: "numbers and strings", correct: false },
+      { text: "all the above", correct: true },
     ],
   },
 
   {
-    question: "add text",
+    question: "String values must be enclosed within ___________ when being assigned to variables.",
     answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
+      { text: "quotations", correct: true },
+      { text: "square brackets", correct: false },
+      { text: "curly brackets", correct: false },
+      { text: "commas", correct: false },
     ],
   },
 
   {
-    question: "add text",
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
     answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-    ],
-  },
-
-  {
-    question: "add text",
-    answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-    ],
-  },
-
-  {
-    question: "add text",
-    answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-    ],
-  },
-
-  {
-    question: "add text",
-    answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-    ],
-  },
-
-  {
-    question: "add text",
-    answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-    ],
-  },
-
-  {
-    question: "add text",
-    answers: [
-      { text: "correct answer", correct: true },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
-      { text: "wrong answer", correct: false },
+      { text: "terminal/ git bash", correct: false },
+      { text: "chatGPT", correct: false },
+      { text: "console.log", correct: true },
+      { text: "help.me", correct: false },
     ],
   },
 ];
@@ -185,7 +135,7 @@ function selectAnswer(e) {
     //deduct time if question answered is incorrect
   } else {
     selectedBtn.classList.add("incorrect");
-    sec -= 10;
+    sec = sec - 10;
     setTimeout(() => {
       currentQuestionIndex++;
       if (currentQuestionIndex < questions.length) {
@@ -214,16 +164,24 @@ function resetState() {
 }
 //////
 function showHighScores() {
-  resetState();
-  var userInit = document.getElementById("initials").value;
-  questionsElement.innerHTML = userInit + ": " + score;
-}
+    resetState();
+    var userInit = document.getElementById("initials").value;
+    questionsElement.innerHTML = "HIGH SCORES ⬇️ ";
+    answerButtons.innerHTML = userInit + ": " + score;
+    document.querySelector(".highscore").classList.add("hide");
+  
+    const reStart = document.createElement("button");
+    reStart.classList.add("reStart");
+    reStart.innerHTML = "restart quiz?";
+    reStart.addEventListener("click", startQuiz);
+    answerButtons.appendChild(reStart);
+  }
 
 function showScore() {
   resetState();
   const submit = document.createElement("button");
   submit.classList.add("submit");
-  questionsElement.innerHTML = "Your final score is " + score + " out of 10!";
+  questionsElement.innerHTML = "Your final score is " + score + " out of 5!";
   document.querySelector(".highscore").classList.remove("hide");
   submit.addEventListener("click", showHighScores);
 }

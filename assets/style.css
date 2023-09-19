@@ -135,3 +135,18 @@ ul {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.reStart{
+  display: flex;
+  background-color: rgb(13, 141, 158);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 15px;
+  margin: 4px 20px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+}
